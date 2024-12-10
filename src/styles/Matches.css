@@ -1,176 +1,173 @@
 /* Main Matches container */
 .Matches {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #1c1c1c;
-    color: #fff;
-    border-radius: 10px;
-    font-family: Arial, sans-serif;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #1c1c1c;
+  color: #fff;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Date selector styling */
 .DateSelector {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-    gap: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 15px;
 }
 
 .nav-button {
-    cursor: pointer;
-    padding: 10px 14px;
-    background-color: #2c2c2c;
-    border: none;
-    border-radius: 50%;
-    color: #fff;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
+  cursor: pointer;
+  padding: 10px 14px;
+  background-color: #2c2c2c;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
 }
 
 .nav-button:hover {
-    background-color: #3d3d3d;
+  background-color: #3d3d3d;
 }
 
 .DateSelector p {
-    font-size: 18px;
-    color: #b3b3b3;
-    font-weight: bold;
+  font-size: 18px;
+  color: #b3b3b3;
+  font-weight: bold;
 }
 
 /* No matches message */
 .No-matches {
-    text-align: center;
-    font-size: 16px;
-    color: #aaa;
-    margin: 20px 0;
+  text-align: center;
+  font-size: 16px;
+  color: #aaa;
+  margin: 20px 0;
 }
 
 /* Matches table styling */
 .MatchesTable {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 8px;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px;
 }
 
 .MatchesTable tbody tr {
-    cursor: pointer;
-    background-color: #2a2a2a;
-    transition: background-color 0.3s ease;
-    border-radius: 8px;
-    overflow: hidden;
+  cursor: pointer;
+  background-color: #2a2a2a;
+  transition: background-color 0.3s ease;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .MatchesTable tbody tr:hover {
-    background-color: #3a3a3a;
+  background-color: #3a3a3a;
 }
 
 .MatchesTable td {
-    padding: 12px 15px;
-    font-size: 15px;
-    color: #fff;
-    text-align: center;
+  padding: 12px 15px;
+  font-size: 15px;
+  color: #fff;
+  text-align: center;
 }
 
 /* League, team, and logo styling */
 .league {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
 }
 
 .league img {
-    background-color: white;
-    width: 35px;
-    height: 35px;
-    margin-bottom: 5px;
+  background-color: white;
+  width: 35px;
+  height: 35px;
+  margin-bottom: 5px;
 }
 
 .team-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    justify-content: center;
-    font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  font-weight: bold;
 }
 
-.homeTeam img, .awayTeam img {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
+.homeTeam img,
+.awayTeam img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
 }
 
 /* Status cell styling */
 .status {
-    font-size: 16px;
-    color: #b3b3b3;
+  font-size: 16px;
+  color: #b3b3b3;
 }
 
 .status p {
-    margin: 0;
+  margin: 0;
 }
-
 
 /* Date picker */
 
 .DateSelector {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
 }
 
 p {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
 }
 
 .calendar-container {
-    position: relative;
+  position: relative;
 }
 
 .calendar-toggle {
-    background-color: #3a3a3a;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    padding: 5px 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    position: relative;
+  background-color: #3a3a3a;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: relative;
 }
 
 .calendar-toggle:hover {
-    background-color: #3d3d3d;
+  background-color: #3d3d3d;
 }
-
 
 .hidden-date-picker {
-    position: absolute; /* Робить інпут невидимим, але працюючим */
-    top: 100%; /* Відображається під кнопкою */
-    left: 0;
-    opacity: 0;
-    z-index: -1; /* Не блокує кліки по кнопці */
+  position: absolute; /* Робить інпут невидимим, але працюючим */
+  top: 100%; /* Відображається під кнопкою */
+  left: 0;
+  opacity: 0;
+  z-index: -1; /* Не блокує кліки по кнопці */
 }
-
 
 /* Responsive styling */
 @media (max-width: 768px) {
-    .Matches {
-        width: 90%;
-    }
+  .Matches {
+    width: 90%;
+  }
 
-    .DateSelector p {
-        font-size: 16px;
-    }
+  .DateSelector p {
+    font-size: 16px;
+  }
 
-    .MatchesTable td {
-        font-size: 14px;
-    }
-
+  .MatchesTable td {
+    font-size: 14px;
+  }
 }
