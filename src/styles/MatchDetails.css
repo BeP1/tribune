@@ -1,0 +1,460 @@
+/* Main container for the fixture details */
+.fixture-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #1c1c1c;
+    color: #fff;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Fixture details header */
+.fixture-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #333;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.home, .away {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.home img, .away img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px;
+}
+
+.home p, .away p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Fixture status and additional details */
+.fixture-status {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #e1e1e1;
+    margin-bottom: 10px;
+}
+.goal {
+    font-size: 30px;
+}
+
+.fixture-status p {
+    margin: 5px 0;
+}
+
+/* Container for goal events in column layout */
+.goal-events {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    gap: 5px; /* Adds space between each goal event */
+}
+
+.goal-event {
+    font-size: 14px;
+    padding: 5px 10px;
+    color: #fff;
+    border-radius: 5px;
+    max-width: 45%;
+}
+
+/* Left alignment for home team goals */
+.home-goal {
+    align-self: flex-start; /* Aligns the home goal on the left side */
+    text-align: left;
+}
+
+/* Right alignment for away team goals */
+.away-goal {
+    align-self: flex-end; /* Aligns the away goal on the right side */
+    text-align: right;
+}
+
+
+
+.aditional-details {
+    text-align: center;
+    color: #b3b3b3;
+    font-size: 14px;
+}
+
+.aditional-details p {
+    margin: 5px 0;
+}
+
+/* Head-to-head section */
+.fixture-H2H {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.fixture-H2H h3 {
+    font-size: 20px;
+    color: #e1e1e1;
+    margin-bottom: 15px;
+}
+
+.H2H-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.H2H-team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+}
+
+.H2H-team img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 8px;
+}
+
+.H2H-team p {
+    font-size: 16px;
+    color: #e1e1e1;
+    font-weight: bold;
+}
+
+.H2H-draws {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #b3b3b3;
+}
+
+/* Statistics table styling */
+.fixture-statistics {
+    margin: 20px auto;
+    background-color: #2c2c2c;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.teams-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.team {
+    text-align: center;
+}
+
+.team img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.statistics-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.stat-row {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.stat-type {
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.stat-row-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.team-value {
+    width: 50px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.stat-bar {
+    flex: 1;
+    height: 15px;
+    background-color: #e0e0e0;
+    border-radius: 7.5px;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.team1-bar {
+    background-color: #4caf50; /* Green for team 1 */
+    height: 100%;
+    border-top-left-radius: 7.5px;
+    border-bottom-left-radius: 7.5px;
+}
+
+.team2-bar {
+    background-color: #2196f3; /* Blue for team 2 */
+    height: 100%;
+    border-top-right-radius: 7.5px;
+    border-bottom-right-radius: 7.5px;
+}
+
+
+/* Lineups Section Styling */
+.lineups-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+.no-lineups {
+    text-align: center;
+}
+
+.lineups-section h3 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #e1e1e1;
+}
+
+.lineups-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.team-lineup {
+    width: 48%;
+    background-color: #1c1c1c;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.team-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.team-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.coach-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #b3b3b3;
+}
+
+.coach-photo {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.players-section {
+    margin-top: 10px;
+}
+
+.players-section h5 {
+    font-size: 18px;
+    color: #e1e1e1;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+}
+
+.starting-xi, .substitutes {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.player-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    background-color: #333;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    color: #e1e1e1;
+    font-size: 14px;
+}
+
+.player-number {
+    font-weight: bold;
+    color: #fff;
+    background-color: #555;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player-name {
+    flex: 1;
+}
+
+.player-pos {
+    font-size: 12px;
+    color: #b3b3b3;
+}
+/* Pre-Match Odds Section Styling */
+.pre-match-odds {
+    background-color: #2a2a2a;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+
+.odds-bookmaker {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.bookmaker-logo {
+    background-color: #fddb3a; /* Bright yellow */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #000;
+    display: flex;
+    align-items: center;
+}
+
+/* Row layout for odds categories */
+.odds-row {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.odds-category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.odds-category h4 {
+    font-size: 14px;
+    color: #b3b3b3;
+    margin: 0;
+    text-align: center;
+}
+
+.odds-options {
+    display: flex;
+    gap: 10px;
+}
+
+/* Odds option styling */
+.odds-option {
+    padding: 8px 16px;
+    background-color: #333;
+    border-radius: 5px;
+    color: #ddd;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Highlighting winning odds */
+.odds-option.highlighted {
+    background-color: #00ff00; /* Green background for winning odds */
+    color: #000;
+}
+
+
+
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .lineups-container {
+        flex-direction: column;
+    }
+
+    .team-lineup {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .fixture-container {
+        padding: 15px;
+    }
+
+    .fixture-details {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home img, .away img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .fixture-status {
+        font-size: 20px;
+    }
+
+    .statistics-table th, .statistics-table td {
+        padding: 10px 5px;
+        font-size: 14px;
+    }
+}
