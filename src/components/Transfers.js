@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../styles/Transfers.css';
 
 const currentDate = new Date();
@@ -20,7 +21,7 @@ const Transfers = ({ transfers }) => {
       ...player,
       transfers: player.transfers.sort(
         (a, b) => new Date(b.date) - new Date(a.date)
-      ), // Сортуємо трансфери за датою проведення
+      ),
     }));
 
   return (
@@ -56,6 +57,33 @@ const Transfers = ({ transfers }) => {
       ))}
     </div>
   );
+};
+
+Transfers.propTypes = {
+  transfers: PropTypes.arrayOf(
+    PropTypes.shape({
+      player: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+      }).isRequired,
+      update: PropTypes.string.isRequired,
+      transfers: PropTypes.arrayOf(
+        PropTypes.shape({
+          date: PropTypes.string.isRequired,
+          type: PropTypes.string.isRequired,
+          teams: PropTypes.shape({
+            in: PropTypes.shape({
+              name: PropTypes.string.isRequired,
+              logo: PropTypes.string.isRequired,
+            }).isRequired,
+            out: PropTypes.shape({
+              name: PropTypes.string.isRequired,
+              logo: PropTypes.string.isRequired,
+            }).isRequired,
+          }).isRequired,
+        })
+      ).isRequired,
+    })
+  ).isRequired,
 };
 
 export default Transfers;

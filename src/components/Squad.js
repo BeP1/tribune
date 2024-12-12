@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Squad = ({ squad }) => {
   const navigate = useNavigate();
@@ -46,5 +47,19 @@ const Squad = ({ squad }) => {
       ))}
     </div>
   );
+};
+Squad.propTypes = {
+  squad: PropTypes.shape({
+    players: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        position: PropTypes.string.isRequired,
+        photo: PropTypes.string.isRequired,
+        number: PropTypes.number,
+        age: PropTypes.number.isRequired,
+      })
+    ).isRequired,
+  }).isRequired,
 };
 export default Squad;
