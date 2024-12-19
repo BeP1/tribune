@@ -1,5 +1,6 @@
 {
   "name": "client",
+  "homepage": "https://BeP1.github.io/tribune",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -19,6 +20,8 @@
     "start": "react-scripts start",
     "server": "node server.js",
     "test": "jest",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "dev": "concurrently \"npm run server\" \"npm start\"",
@@ -89,6 +92,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.2",
+    "gh-pages": "^6.2.0",
     "globals": "^15.13.0",
     "husky": "^8.0.0",
     "identity-obj-proxy": "^3.0.0",

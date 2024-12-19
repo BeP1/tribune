@@ -14,6 +14,7 @@ export default [
       'cypress.config.js',
       'cypress/e2e/**',
       'src/Services/**',
+      'build/**',
     ],
   },
   { settings: { react: { version: 'detect' } } },
