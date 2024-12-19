@@ -23,7 +23,7 @@
     "eject": "react-scripts eject",
     "dev": "concurrently \"npm run server\" \"npm start\"",
     "format": "prettier --write .",
-    "check": "prettier --check .\n",
+    "check": "prettier --check .",
     "lint": "eslint .",
     "precommit": "npm run check && npm run lint && npm test",
     "prepare": "husky install"
