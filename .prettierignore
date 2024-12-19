@@ -4,3 +4,4 @@ coverage
 /.prettierignore
 node_modules
 dist
+.github

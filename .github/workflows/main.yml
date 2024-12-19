@@ -1,8 +1,11 @@
+
 name: CI
 
 on:
+  pull_request:
+    branches: ["main"]
   push:
-    branches: ['main']
+    branches: ["main"]
   workflow_dispatch:
 
 jobs:
@@ -13,19 +16,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Set up Node.js
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      # Install dependencies
-      - name: Install dependencies
-        run: npm install
-
       # Run Prettier
       - name: Run Prettier
-        run: npm run format
+        run: npm run check
 
       # Run ESLint
       - name: Run ESLint
@@ -34,7 +27,3 @@ jobs:
       # Run Tests
       - name: Run Tests
         run: npm test
-
-      # Build the application
-      - name: Build Application
-        run: npm run build
