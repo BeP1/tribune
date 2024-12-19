@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  pull_request:
+    branches: ["main"]
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  lint-test-build:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Run Prettier
+      - name: Run Prettier
+        run: npm run check
+
+      # Run ESLint
+      - name: Run ESLint
+        run: npm run lint
+
+      # Run Tests
+      - name: Run Tests
+        run: npm test
+
+        #Build
+      - name: Build
+        run: npm run build
+
