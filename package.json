@@ -44,7 +44,9 @@
       "prettier"
     ],
     "rules": {
-      "prettier/prettier": "error"
+      "prettier/prettier": "error",
+      "import/no-anonymous-default-export": "off",
+      "array-callback-return": "warn"
     }
   },
   "jest": {
