@@ -1,17 +1,13 @@
 name: CI
 
 on:
-  pull_request:
-    branches:
-      - master
   push:
-    branches:
-      - master
+    branches: ["main"]
+  workflow_dispatch:
 
 jobs:
   lint-test-build:
     runs-on: ubuntu-latest
-
     steps:
       # Checkout the code
       - name: Checkout code
