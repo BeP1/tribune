@@ -25,7 +25,8 @@
     "dev": "concurrently \"npm run server\" \"npm start\"",
     "format": "prettier --write .",
     "lint": "eslint .",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "prepare": "husky install"
   },
   "husky": {
     "hooks": {
@@ -60,7 +61,7 @@
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.2",
     "globals": "^15.13.0",
-    "husky": "^9.1.7",
+    "husky": "^8.0.0",
     "prettier": "^3.4.2"
   }
 }
