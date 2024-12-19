@@ -28,7 +28,8 @@ class MatchesService {
     let home = 0;
     let away = 0;
     let draw = 0;
-    data.map((fixture) => {
+
+    data.forEach((fixture) => {
       if (fixture.teams.home.winner) {
         home++;
       } else if (fixture.teams.away.winner) {
@@ -37,6 +38,7 @@ class MatchesService {
         draw++;
       }
     });
+
     return [home, draw, away];
   }
 }
