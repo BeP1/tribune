@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const axios = require('axios');
-// axios прибрати, логіку в окремий
+
 const app = express();
 const PORT = 5000;
 app.use(
@@ -27,10 +26,14 @@ const API_HEADERS = {
 
 const fetchData = async (url) => {
   try {
-    const response = await axios.get(url, { headers: API_HEADERS });
-    return response.data.response;
+    const response = await fetch(url, { headers: API_HEADERS });
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data.response;
   } catch (error) {
-    console.error('Error fetching data from ${url}:', error.message);
+    console.error(`Error fetching data from ${url}:`, error.message);
     throw error;
   }
 };

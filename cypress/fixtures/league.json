@@ -1,0 +1,40 @@
+[
+  {
+    "league": {
+      "id": 39,
+      "name": "Premier League",
+      "standings": [
+        [
+          {
+            "rank": 1,
+            "team": {
+              "id": 1,
+              "name": "Team A",
+              "logo": "https://example.com/team-a-logo.png"
+            },
+            "all": {
+              "played": 10
+            },
+            "goalsDiff": 20,
+            "points": 25,
+            "form": "WDWWW"
+          },
+          {
+            "rank": 2,
+            "team": {
+              "id": 2,
+              "name": "Team B",
+              "logo": "https://example.com/team-b-logo.png"
+            },
+            "all": {
+              "played": 10
+            },
+            "goalsDiff": 15,
+            "points": 22,
+            "form": "WDWWL"
+          }
+        ]
+      ]
+    }
+  }
+]

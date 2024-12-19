@@ -1,0 +1,29 @@
+[
+  {
+    "fixture": {
+      "id": 12345,
+      "date": "2024-01-01T20:00:00+00:00",
+      "status": { "short": "NS" }
+    },
+    "league": {
+      "name": "Premier League",
+      "logo": "https://example.com/epl-logo.png"
+    },
+    "teams": {
+      "home": {
+        "id": 1,
+        "name": "Team A",
+        "logo": "https://example.com/team-a-logo.png"
+      },
+      "away": {
+        "id": 2,
+        "name": "Team B",
+        "logo": "https://example.com/team-b-logo.png"
+      }
+    },
+    "goals": {
+      "home": null,
+      "away": null
+    }
+  }
+]

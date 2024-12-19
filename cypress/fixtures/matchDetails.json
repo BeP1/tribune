@@ -51,10 +51,107 @@
           "player": { "name": "Player C" },
           "time": { "elapsed": 75 }
         }
+      ],
+      "statistics": [
+        {
+          "team": {
+            "id": 1,
+            "name": "Team A",
+            "logo": "https://example.com/team-a-logo.png"
+          },
+          "statistics": [
+            { "type": "Shots on Goal", "value": 5 },
+            { "type": "Ball Possession", "value": "60%" }
+          ]
+        },
+        {
+          "team": {
+            "id": 2,
+            "name": "Team B",
+            "logo": "https://example.com/team-b-logo.png"
+          },
+          "statistics": [
+            { "type": "Shots on Goal", "value": 3 },
+            { "type": "Ball Possession", "value": "40%" }
+          ]
+        }
+      ],
+      "lineups": [
+        {
+          "team": {
+            "id": 1,
+            "name": "Team A",
+            "logo": "https://example.com/team-a-logo.png"
+          },
+          "formation": "4-3-3",
+          "coach": {
+            "name": "Coach A",
+            "photo": "https://example.com/coach-a-photo.png"
+          },
+          "startXI": [
+            { "player": { "id": 101, "name": "Player A1", "number": 1, "pos": "GK" } },
+            { "player": { "id": 102, "name": "Player A2", "number": 2, "pos": "DF" } }
+          ],
+          "substitutes": [
+            { "player": { "id": 201, "name": "Sub A1", "number": 12, "pos": "FW" } }
+          ]
+        },
+        {
+          "team": {
+            "id": 2,
+            "name": "Team B",
+            "logo": "https://example.com/team-b-logo.png"
+          },
+          "formation": "4-4-2",
+          "coach": {
+            "name": "Coach B",
+            "photo": "https://example.com/coach-b-photo.png"
+          },
+          "startXI": [
+            { "player": { "id": 103, "name": "Player B1", "number": 1, "pos": "GK" } },
+            { "player": { "id": 104, "name": "Player B2", "number": 3, "pos": "DF" } }
+          ],
+          "substitutes": [
+            { "player": { "id": 202, "name": "Sub B1", "number": 14, "pos": "MF" } }
+          ]
+        }
       ]
     }
   ],
   {
     "h2h": [2, 1, 3]
-  }
+  },
+  [
+    {
+      "bookmakers": [
+        {
+          "name": "Bet365",
+          "bets": [
+            {
+              "name": "Match Winner",
+              "values": [
+                { "value": "Home", "odd": "1.50", "won": true },
+                { "value": "Draw", "odd": "3.50", "won": false },
+                { "value": "Away", "odd": "4.00", "won": false }
+              ]
+            },
+            {
+              "name": "Goals Over/Under",
+              "values": [
+                { "value": "Over 2.5", "odd": "1.80" },
+                { "value": "Under 2.5", "odd": "2.00" }
+              ]
+            },
+            {
+              "name": "Both Teams Score",
+              "values": [
+                { "value": "Yes", "odd": "1.75" },
+                { "value": "No", "odd": "2.10" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 ]
