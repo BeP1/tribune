@@ -7,7 +7,7 @@ import Player from './components/Player';
 
 function App() {
   return (
-    <BrowserRouter basename="/tribume">
+    <BrowserRouter basename="/tribune">
       <div className="app">
         <Routes>
           <Route path="/" element={<Home />} />
