@@ -2,3 +2,5 @@
 build
 coverage
 /.prettierignore
+node_modules
+dist

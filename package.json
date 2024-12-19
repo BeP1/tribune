@@ -23,8 +23,9 @@
     "eject": "react-scripts eject",
     "dev": "concurrently \"npm run server\" \"npm start\"",
     "format": "prettier --write .",
+    "check": "prettier --check .\n",
     "lint": "eslint .",
-    "precommit": "npm run lint && npm test",
+    "precommit": "npm run check && npm run lint && npm test",
     "prepare": "husky install"
   },
   "husky": {
@@ -36,8 +37,15 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
-    ]
+      "react-app/jest",
+      "plugin:prettier/recommended"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": "error"
+    }
   },
   "jest": {
     "setupFilesAfterEnv": [

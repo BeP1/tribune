@@ -89,11 +89,32 @@
             "photo": "https://example.com/coach-a-photo.png"
           },
           "startXI": [
-            { "player": { "id": 101, "name": "Player A1", "number": 1, "pos": "GK" } },
-            { "player": { "id": 102, "name": "Player A2", "number": 2, "pos": "DF" } }
+            {
+              "player": {
+                "id": 101,
+                "name": "Player A1",
+                "number": 1,
+                "pos": "GK"
+              }
+            },
+            {
+              "player": {
+                "id": 102,
+                "name": "Player A2",
+                "number": 2,
+                "pos": "DF"
+              }
+            }
           ],
           "substitutes": [
-            { "player": { "id": 201, "name": "Sub A1", "number": 12, "pos": "FW" } }
+            {
+              "player": {
+                "id": 201,
+                "name": "Sub A1",
+                "number": 12,
+                "pos": "FW"
+              }
+            }
           ]
         },
         {
@@ -108,11 +129,32 @@
             "photo": "https://example.com/coach-b-photo.png"
           },
           "startXI": [
-            { "player": { "id": 103, "name": "Player B1", "number": 1, "pos": "GK" } },
-            { "player": { "id": 104, "name": "Player B2", "number": 3, "pos": "DF" } }
+            {
+              "player": {
+                "id": 103,
+                "name": "Player B1",
+                "number": 1,
+                "pos": "GK"
+              }
+            },
+            {
+              "player": {
+                "id": 104,
+                "name": "Player B2",
+                "number": 3,
+                "pos": "DF"
+              }
+            }
           ],
           "substitutes": [
-            { "player": { "id": 202, "name": "Sub B1", "number": 14, "pos": "MF" } }
+            {
+              "player": {
+                "id": 202,
+                "name": "Sub B1",
+                "number": 14,
+                "pos": "MF"
+              }
+            }
           ]
         }
       ]

@@ -12,7 +12,6 @@ const startServer = () => {
   });
 };
 
-
 const stopServer = () => {
   if (serverProcess) {
     serverProcess.kill();
@@ -29,31 +28,41 @@ describe('Integration Tests for Real Server', () => {
   });
 
   it('should fetch matches for a specific date', async () => {
-    const response = await request('http://localhost:5000').get('/api/matches/2024-12-19');
+    const response = await request('http://localhost:5000').get(
+      '/api/matches/2024-12-19'
+    );
     expect(response.status).toBe(200);
     expect(response.body).toEqual(expect.any(Array));
   });
 
   it('should fetch match details for a given ID', async () => {
-    const response = await request('http://localhost:5000').get('/api/match-details/12345');
+    const response = await request('http://localhost:5000').get(
+      '/api/match-details/12345'
+    );
     expect(response.status).toBe(200);
     expect(response.body[0][0]).toHaveProperty('events');
   });
 
   it('should fetch league standings for a given league ID', async () => {
-    const response = await request('http://localhost:5000').get('/api/league/39');
+    const response = await request('http://localhost:5000').get(
+      '/api/league/39'
+    );
     expect(response.status).toBe(200);
     expect(response.body[0]).toHaveProperty('league');
   });
 
   it('should fetch club details for a given club ID and league ID', async () => {
-    const response = await request('http://localhost:5000').get('/api/club-details/33/39');
+    const response = await request('http://localhost:5000').get(
+      '/api/club-details/33/39'
+    );
     expect(response.status).toBe(200);
     expect(response.body[0]).toHaveProperty('team');
   });
 
   it('should fetch player details for a given player ID', async () => {
-    const response = await request('http://localhost:5000').get('/api/player-details/44');
+    const response = await request('http://localhost:5000').get(
+      '/api/player-details/44'
+    );
     expect(response.status).toBe(200);
     expect(response.body[0]).toHaveProperty('player');
   });

@@ -5,10 +5,22 @@ describe('Integration Tests for Football App', () => {
     cy.visit(frontendBaseUrl);
   });
   const testEndpoints = [
-    { method: 'GET', path: '/matches/2024-01-01', description: 'Matches for a given date' },
-    { method: 'GET', path: '/match-details/12345', description: 'Match details by ID' },
+    {
+      method: 'GET',
+      path: '/matches/2024-01-01',
+      description: 'Matches for a given date',
+    },
+    {
+      method: 'GET',
+      path: '/match-details/12345',
+      description: 'Match details by ID',
+    },
     { method: 'GET', path: '/league/39', description: 'League standings' },
-    { method: 'GET', path: '/player-details/101', description: 'Player details' },
+    {
+      method: 'GET',
+      path: '/player-details/101',
+      description: 'Player details',
+    },
   ];
 
   testEndpoints.forEach(({ method, path, description }) => {
@@ -57,28 +69,25 @@ describe('Integration Tests for Football App', () => {
     cy.get('.fixture-status').should('contain.text', '-');
   });
 
-    it('Loads league standings and allows navigation to club details', () => {
-      cy.visit(`${frontendBaseUrl}`);
-      cy.get('.league-selector .league-button').contains('La Liga').click();
+  it('Loads league standings and allows navigation to club details', () => {
+    cy.visit(`${frontendBaseUrl}`);
+    cy.get('.league-selector .league-button').contains('La Liga').click();
 
-      cy.get('.standings-table tbody tr').should('have.length.greaterThan', 0);
+    cy.get('.standings-table tbody tr').should('have.length.greaterThan', 0);
 
-      cy.get('.standings-table tbody tr')
-        .first()
-        .find('.team-info')
-        .click();
-      cy.url().should('include', `/club/`);
-    });
+    cy.get('.standings-table tbody tr').first().find('.team-info').click();
+    cy.url().should('include', `/club/`);
+  });
 
-      it('Displays player details', () => {
-        const playerId = 101;
+  it('Displays player details', () => {
+    const playerId = 101;
 
-        cy.visit(`${frontendBaseUrl}player/${playerId}`);
-        cy.url().should('include', `/player/${playerId}`);
+    cy.visit(`${frontendBaseUrl}player/${playerId}`);
+    cy.url().should('include', `/player/${playerId}`);
 
-        cy.get('.player-header').should('exist');
-      });
-/*
+    cy.get('.player-header').should('exist');
+  });
+  /*
       it('Handles API errors gracefully', () => {
         const invalidDate = '3000-01-01'; // Неправильна дата
         cy.visit(`${frontendBaseUrl}/?date=${invalidDate}`);
