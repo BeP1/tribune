@@ -6,7 +6,7 @@ import pluginReact from 'eslint-plugin-react';
 export default [
   { files: ['**/*.{js,mjs,cjs,jsx}'] },
   { languageOptions: { globals: globals.browser } },
-  { ignores: ['server.js', 'src/App.test.js', 'src/__tests__/**/*.js','cypress.config.js','cypress/**'] },
+  { ignores: ['server.js', 'src/App.test.js', 'src/__tests__/**/*.js','cypress.config.js','cypress/e2e/**', 'src/Services/**'] },
   { settings: { react: { version: 'detect' } } },
   { rules: { 'react/prop-types': 0 } },
   pluginJs.configs.recommended,
