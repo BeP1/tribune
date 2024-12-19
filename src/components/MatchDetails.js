@@ -46,41 +46,40 @@ const MatchDetails = () => {
     navigate(`/player/${id}`);
   };
 
-  if (loading) {
+  if (loading || !match) {
     return <p>Loading...</p>;
   }
-  console.log(match);
-  const { fixture, teams, goals, events, statistics, league, lineups } = match;
-  const date = new Date(fixture.date);
+
+  const date = new Date(match.fixture.date);
 
   return (
     <div className="fixture-container">
       <div className="fixture-details">
         <div
           className="home"
-          onClick={() => goClubDetails(teams.home.id, league.id)}
+          onClick={() => goClubDetails(match.teams.home.id, match.league.id)}
         >
-          <img src={teams.home.logo} alt={teams.home.name} />
-          <p>{teams.home.name}</p>
+          <img src={match.teams.home.logo} alt={match.teams.home.name} />
+          <p>{match.teams.home.name}</p>
         </div>
         <div>
           <div className="fixture-status">
             <p className="goal">
               {(() => {
-                if (fixture.status.short === 'NS') {
+                if (match.fixture.status.short === 'NS') {
                   return `${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`;
-                } else if (fixture.status.short === 'FT') {
-                  return `${goals.home} - ${goals.away}`;
+                } else if (match.fixture.status.short === 'FT') {
+                  return `${match.goals.home} - ${match.goals.away}`;
                 }
               })()}
             </p>
             <div className="goal-events">
-              {events.map((event, index) => {
+              {match.events.map((event, index) => {
                 if (event.type === 'Goal') {
                   return (
                     <p
                       key={index}
-                      className={`goal-event ${event.team.id === teams.home.id ? 'home-goal' : 'away-goal'}`}
+                      className={`goal-event ${event.team.id === match.teams.home.id ? 'home-goal' : 'away-goal'}`}
                     >
                       {event.player.name} - {event.time.elapsed}
                     </p>
@@ -95,20 +94,23 @@ const MatchDetails = () => {
               {date.getDate()}.{date.getMonth() + 1}.{date.getFullYear()}
             </p>
             <p>
-              {league.name}, {league.country}, {league.round}
+              {match.league.name}, {match.league.country}, {match.league.round}
             </p>
-            <p>Referee: {fixture.referee === null ? 'TBD' : fixture.referee}</p>
             <p>
-              Venue: {fixture.venue.name}, {fixture.venue.city}
+              Referee:{' '}
+              {match.fixture.referee === null ? 'TBD' : match.fixture.referee}
+            </p>
+            <p>
+              Venue: {match.fixture.venue.name}, {match.fixture.venue.city}
             </p>
           </div>
         </div>
         <div
           className="away"
-          onClick={() => goClubDetails(teams.away.id, league.id)}
+          onClick={() => goClubDetails(match.teams.away.id, match.league.id)}
         >
-          <img src={teams.away.logo} alt={teams.away.name} />
-          <p>{teams.away.name}</p>
+          <img src={match.teams.away.logo} alt={match.teams.away.name} />
+          <p>{match.teams.away.name}</p>
         </div>
       </div>
       <div className="fixture-H2H">
@@ -135,28 +137,29 @@ const MatchDetails = () => {
           </div>
         </div>
       </div>
-      {statistics && statistics.length > 1 && (
+      {match.statistics && match.statistics.length > 1 && (
         <div className="fixture-statistics">
           <div className="teams-header">
             <div className="team">
               <img
-                src={statistics[0].team.logo}
-                alt={statistics[0].team.name}
+                src={match.statistics[0].team.logo}
+                alt={match.statistics[0].team.name}
               />
-              <p>{statistics[0].team.name}</p>
+              <p>{match.statistics[0].team.name}</p>
             </div>
             <div className="team">
               <img
-                src={statistics[1].team.logo}
-                alt={statistics[1].team.name}
+                src={match.statistics[1].team.logo}
+                alt={match.statistics[1].team.name}
               />
-              <p>{statistics[1].team.name}</p>
+              <p>{match.statistics[1].team.name}</p>
             </div>
           </div>
           <div className="statistics-list">
-            {statistics[0].statistics.map((stat, index) => {
+            {match.statistics[0].statistics.map((stat, index) => {
               const team1Value = stat.value || 0;
-              const team2Value = statistics[1].statistics[index]?.value || 0;
+              const team2Value =
+                match.statistics[1].statistics[index]?.value || 0;
 
               const isPercentage =
                 typeof team1Value === 'string' && team1Value.includes('%');
@@ -202,11 +205,11 @@ const MatchDetails = () => {
         <h3>Lineups</h3>
         <div className="lineups-container">
           {(() => {
-            if (lineups.length === 0) {
+            if (match.lineups.length === 0) {
               return <p className="no-lineups">No lineups yet</p>;
             }
           })()}
-          {lineups.map((teamLineup, index) => (
+          {match.lineups.map((teamLineup, index) => (
             <div
               key={index}
               className={`team-lineup ${index === 0 ? 'left-team' : 'right-team'}`}

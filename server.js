@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
-
+// axios прибрати, логіку в окремий
 const app = express();
 const PORT = 5000;
 app.use(

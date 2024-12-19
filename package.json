@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
     "axios": "^1.7.9",
     "cors": "^2.8.5",
     "express": "^4.21.2",
@@ -19,13 +16,13 @@
   "scripts": {
     "start": "react-scripts start",
     "server": "node server.js",
+    "test": "jest",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev": "concurrently \"npm run server\" \"npm start\"",
     "format": "prettier --write .",
     "lint": "eslint .",
-    "precommit": "npm run lint",
+    "precommit": "npm run lint && npm test",
     "prepare": "husky install"
   },
   "husky": {
@@ -40,6 +37,18 @@
       "react-app/jest"
     ]
   },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupTests.js"
+    ],
+    "testEnvironment": "jsdom",
+    "transform": {
+      "^.+\\.(js|jsx)$": "babel-jest"
+    },
+    "moduleNameMapper": {
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    }
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -53,15 +62,24 @@
     ]
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.26.3",
     "@eslint/js": "^9.16.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.5.2",
+    "babel-jest": "^29.7.0",
     "concurrently": "^9.1.0",
     "cross-env": "^7.0.3",
+    "cypress": "^13.16.1",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.2",
     "globals": "^15.13.0",
     "husky": "^8.0.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.5.1",
     "prettier": "^3.4.2"
   }
 }

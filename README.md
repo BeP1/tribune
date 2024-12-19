@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# Tribune - Додаток для аналізу футбольних матчів та турнірних таблиць
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Tribune** — це сучасний веб-додаток, який надає вичерпну інформацію про футбольні ліги, команди та матчі. Проєкт створений для того, щоб запропонувати інтуїтивно зрозумілу платформу для футбольних фанатів, де можна досліджувати статистику матчів, турнірні таблиці, деталі гравців та отримувати оновлення в реальному часі.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🔥 **Ідея проєкту**
 
-### `npm start`
+Tribune об'єднує дані з популярних футбольних ліг і турнірів в одному місці. Користувачі можуть:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Переглядати деталі матчів, включаючи статистику, результати та історію зустрічей.
+- Вивчати турнірні таблиці різних ліг і чемпіонатів.
+- Отримувати детальну інформацію про гравців та їхні досягнення.
+- Переглядати розклад матчів та історичні дані.
+- Взаємодіяти з привабливим інтерфейсом
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Мета проєкту — забезпечити зручний доступ до даних про футбол у реальному часі через використання сучасних веб-технологій.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🌟 **Функціонал**
 
-### `npm run build`
+1. **Деталі матчів:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   - Перегляд результатів, оновлень у реальному часі та подій (голів, штрафів тощо).
+   - Порівняння команд завдяки історії очних зустрічей (H2H).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Турнірні таблиці:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   - Огляд позицій команд у провідних лігах: АПЛ, Ла Ліга, Серія А та інші.
+   - Детальна статистика: зіграні матчі, різниця голів, очки та форма команди.
 
-### `npm run eject`
+3. **Профілі гравців:**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   - Інформація про кожного гравця, включаючи його статистику та внесок у гру команди.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. **Розклад матчів:**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   - Зручний вибір дати для перегляду минулих, поточних і майбутніх матчів.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+5. **Динамічний інтерфейс:**
+   - Легка навігація між лігами, матчами та командами.
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Взаємодія компонентів
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+[Photo](public/img.png)
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Ключові сценарії оновлення даних
 
-### Analyzing the Bundle Size
+### Сценарій 1: Оновлення матчів за датою
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Користувач обирає нову дату.
+2. `MatchesService.todayMatches(date)` отримує список матчів для вибраної дати.
+3. Дані рендеряться в компоненті `Matches`.
 
-### Making a Progressive Web App
+### Сценарій 2: Показ детальної інформації про матч
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Користувач натискає на конкретний матч у списку.
+2. `MatchesService.MatchDetails(matchId)` повертає дані про матч:
+   - Загальна інформація.
+   - H2H статистика.
+   - Розклад.
+3. Компонент `MatchDetails` відображає деталі.
 
-### Advanced Configuration
+### Сценарій 3: Перемикання між лігами
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. Користувач натискає кнопку ліги.
+2. `LeagueService.League(leagueId)` повертає дані турнірної таблиці.
+3. Компонент `LeagueStandings` оновлює таблицю.
 
-### Deployment
+### Сценарій 4: Перемикання між фікстурами
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. Користувач натискає на матч
+2. Компонент `MatchDetails` повертає дані про подробиці матчу
 
-### `npm run build` fails to minify
+### Сценарій 5: Оновлення даних про команду
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Користувач обирає команду в турнірній таблиці.
+2. `LeagueService.ClubDetails(teamId, leagueId)` повертає склад команди та трансфери.
+3. Компоненти `Squad` і `Transfers` відображають отримані дані.
+
+### Сценарій 6: Пошук та перегляд гравця
+
+1. Користувач натискає на гравця в складі.
+2. `LeagueService.PlayerDetails(playerId)` повертає інформацію про гравця.
+3. Компонент `PlayerDetails` показує статистику та біографію.
+
+---

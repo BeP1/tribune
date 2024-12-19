@@ -33,7 +33,7 @@ const LeagueStandings = () => {
   const goClubDetails = (club_id, league_id) => {
     navigate(`/club/${club_id}/${league_id}`);
   };
-  console.log(teams);
+
   return (
     <div className="league-container">
       <div className="league-selector">
