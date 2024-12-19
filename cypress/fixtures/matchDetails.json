@@ -1,0 +1,60 @@
+[
+  [
+    {
+      "fixture": {
+        "id": 12345,
+        "date": "2024-01-01T20:00:00+00:00",
+        "status": { "short": "FT" },
+        "venue": {
+          "name": "Stadium A",
+          "city": "City A"
+        },
+        "referee": "Referee A"
+      },
+      "league": {
+        "name": "Premier League",
+        "country": "England",
+        "round": "Round 1"
+      },
+      "teams": {
+        "home": {
+          "id": 1,
+          "name": "Team A",
+          "logo": "https://example.com/team-a-logo.png"
+        },
+        "away": {
+          "id": 2,
+          "name": "Team B",
+          "logo": "https://example.com/team-b-logo.png"
+        }
+      },
+      "goals": {
+        "home": 2,
+        "away": 1
+      },
+      "events": [
+        {
+          "type": "Goal",
+          "team": { "id": 1 },
+          "player": { "name": "Player A" },
+          "time": { "elapsed": 15 }
+        },
+        {
+          "type": "Goal",
+          "team": { "id": 2 },
+          "player": { "name": "Player B" },
+          "time": { "elapsed": 30 }
+        },
+        {
+          "type": "Goal",
+          "team": { "id": 1 },
+          "player": { "name": "Player C" },
+          "time": { "elapsed": 75 }
+        }
+      ]
+    }
+  ],
+  {
+    "h2h": [2, 1, 3]
+  }
+]
